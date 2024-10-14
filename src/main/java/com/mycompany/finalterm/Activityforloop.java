@@ -56,12 +56,51 @@ public class Activityforloop {
        
        System.out.println("The average grade is: " + average);
        
-       scanner.close();
-            
+       System.out.println("\nGrade Classification: ");
+       for(int i = 0; i < grades.length; i++){
+        char gradesClassification;
+           if(grades[i] >= 90) {
+               gradesClassification = 'A';    
+           } else if (grades[i] >= 80){
+               gradesClassification = 'B';  
+           } else if (grades[i] >= 70) {
+               gradesClassification = 'C';  
+           } else if (grades[i] >= 60){
+               gradesClassification = 'D';
+           } else {
+               gradesClassification = 'F';
+           }
+           System.out.println(subjects[i] + ":" + grades[i] + " -> " + gradesClassification);
+           
+       }
+       
+//     check for the subjects below 75
+       System.out.println("\nSubjects with grades below 75: ");
+       
+       // Identify the highest and lowest grades
+       double maxGrade = grades[0];
+       double minGrade = grades[0];
+       String maxSubject = subjects[0];
+       String minSubject = subjects[0];
+       
+       for (int i = 1; i < grades.length; i++){
+           if (grades[i] > maxGrade){
+               maxGrade = grades[i];
+               maxSubject = subjects[i];
+           }
+           
+           if (grades[i] < minGrade){
+               minGrade = grades[i];
+               minSubject = subjects[i];
+               
+           }
+       }
+        System.out.println("\nHighest grdae: " + maxSubject + " : " + maxGrade);
+        System.out.println("\nLowest grade : " + minSubject + " : " + minGrade);
         
         
-        
-        
+       
+                
     }
     
 }
